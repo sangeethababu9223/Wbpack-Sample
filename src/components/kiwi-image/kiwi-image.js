@@ -3,7 +3,7 @@ import kiwi from './kiwi.jpg';
 class KiwiImage {
     render() {
         const img = document.createElement('img');
-        img.alt = altText;
+        img.alt = 'Kiwi';
         img.src = kiwi;
         img.classList.add('kiwi-image');
 
