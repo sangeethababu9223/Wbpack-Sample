@@ -10,7 +10,7 @@ module.exports = {
         path: path.resolve(__dirname,'./dist'),
         publicPath: ''
     },
-    mode: 'none',
+    mode: 'development',
     module: {
         rules: [
             {   
@@ -37,6 +37,12 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
                 ]
+            },
+            {   
+                test: /\.hbs$/,
+                use: [
+                    'handlebars-loader'
+                ]
             }
         ]
     },
@@ -52,11 +58,9 @@ module.exports = {
             ]
         }),
         new HtmlWebpackPlugin({
-            title : 'Hello World',
-            filename: 'html/index.html',
-            meta: {
-                description: 'Random Description'
-            }
+            title : 'Hello World sample here',
+            template: 'src/index.hbs',
+            description: 'Random Description text goes here'
         })
     ]
 }
